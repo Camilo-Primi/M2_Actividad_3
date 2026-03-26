@@ -1,34 +1,33 @@
-name: CI Pipeline - Ingeniería Web
+name: "CI Pipeline - Ingenieria Web"
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ "main", "master" ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1. Checkout del código
+      - name: "1. Checkout del codigo"
         uses: actions/checkout@v4
 
-      - name: 2. Configurar Node.js
+      - name: "2. Configurar Node.js"
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: 3. Stage: Install
+      - name: "3. Stage: Install"
         run: npm install
 
-      - name: 4. Stage: Test & Coverage
-        # Usamos --passWithNoTests para que no falle si no encuentra la ruta exacta
-        run: npm run coverage -- --passWithNoTests || echo "Pruebas completadas"
+      - name: "4. Stage: Test y Coverage"
+        # El flag --passWithNoTests evita que falle si hay problemas de rutas
+        run: npm test -- --coverage --passWithNoTests
 
-      - name: 5. Subir reporte de cobertura
+      - name: "5. Subir reporte de cobertura"
         uses: actions/upload-artifact@v4
         with:
           name: reporte-cobertura
           path: coverage/
-          if-no-files-found: ignore
