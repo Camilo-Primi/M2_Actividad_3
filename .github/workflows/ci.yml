@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Stage Test y Coverage
-        run: npm test -- --coverage --passWithNoTests
+        run: npx test -- --coverage --passWithNoTests
 
       - name: Subir reporte de cobertura
         uses: actions/upload-artifact@v4
