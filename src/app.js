@@ -33,10 +33,13 @@ app.delete('/items/:id', (req, res) => {
 });
 
 // Configuración del puerto
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
 
-// Exportamos para las pruebas unitarias que te pide la tarea
-module.exports = app;
+// Solo inicia el servidor si este archivo se ejecuta directamente
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app; // Esto permite que Jest lo use sin dejarlo abierto

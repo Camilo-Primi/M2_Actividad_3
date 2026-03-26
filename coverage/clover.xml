@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1774547908018" clover="3.2.0">
+  <project timestamp="1774547908019" name="All files">
+    <metrics statements="26" coveredstatements="24" conditionals="4" coveredconditionals="3" methods="11" coveredmethods="10" elements="41" coveredelements="37" complexity="0" loc="26" ncloc="26" packages="1" files="2" classes="2"/>
+    <file name="app.js" path="C:\Users\AD\Actividad 3 Ingenieria web\src\app.js">
+      <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="4"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="3" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="45" count="2" type="stmt"/>
+    </file>
+    <file name="logic.js" path="C:\Users\AD\Actividad 3 Ingenieria web\src\logic.js">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
