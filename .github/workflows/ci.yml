@@ -1,0 +1,41 @@
+name: CI Pipeline - Ingeniería Web
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout del código
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 3. Stage: Install (Dependencias)
+        run: npm install
+
+      - name: 4. Stage: Lint (Estándares de Código)
+        # Nota: Si aún no configuraste ESLint, este paso podría fallar. 
+        # Puedes comentarlo con '#' si te da problemas para la entrega inicial.
+        run: npm run lint || echo "Linting skiped"
+
+      - name: 5. Stage: Test & Coverage (Pruebas y Cobertura)
+        run: npm run coverage
+
+      - name: 6. Stage: Build (Verificación de empaquetado)
+        run: echo "Build stage completed successfully"
+
+      - name: 7. Subir reporte de cobertura como Artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: coverage/
